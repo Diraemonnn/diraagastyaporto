@@ -1,0 +1,116 @@
+/* Certificates Section */
+.certificates {
+    background: var(--light-color);
+    padding: 80px 0;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    transition: var(--transition);
+}
+
+.certificates-grid.collapsed {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.certificates-control {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-load-more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-load-more:hover {
+    background: var(--accent-color);
+    color: var(--light-color);
+}
+
+.btn-load-more .fa-chevron-down {
+    transition: var(--transition);
+}
+
+.btn-load-more.expanded .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Skills Section */
+.skills {
+    background: var(--light-color);
+    padding: 80px 0;
+}
+
+.skills-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-list-item {
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.skill-list-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: var(--light-color);
+}
+
+.skill-icon i {
+    transition: var(--transition);
+}
+
+.skill-list-item:hover .skill-icon i {
+    transform: scale(1.1);
+}
+
+.skill-list-item span {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.skill-description {
+    font-size: 14px;
+    color: var(--gray-color);
+    margin-top: 8px;
+}

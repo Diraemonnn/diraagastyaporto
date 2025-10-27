@@ -49,47 +49,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Load More Certificates
+  // Certificates toggle
   const certificatesGrid = document.getElementById("certificatesGrid");
   const loadMoreBtn = document.getElementById("loadMoreCertificates");
 
   if (certificatesGrid && loadMoreBtn) {
-    const allCards = certificatesGrid.querySelectorAll(".certificate-card");
+    // Initialize state
+    certificatesGrid.classList.add('collapsed');
+    let isExpanded = false;
     
-    if (allCards.length > 3) {
-      // Initially show only 3 certificates
-      allCards.forEach((card, index) => {
-        if (index >= 3) {
-          card.style.display = "none";
-        }
-      });
-      
-      loadMoreBtn.style.display = "block";
-
-      loadMoreBtn.addEventListener("click", () => {
-        const hiddenCards = Array.from(allCards).filter((card, index) => {
-          return card.style.display === "none" || card.style.display === "";
-        });
-
-        if (hiddenCards.length > 0) {
-          // Show next 3 certificates
-          hiddenCards.slice(0, 3).forEach((card) => {
-            card.style.display = "block";
+    const updateCertificatesView = () => {
+      if (isExpanded) {
+        certificatesGrid.classList.remove('collapsed');
+        loadMoreBtn.querySelector('.btn-text').textContent = "Show Less";
+        loadMoreBtn.querySelector('.fa-chevron-down').style.transform = 'rotate(180deg)';
+      } else {
+        certificatesGrid.classList.add('collapsed');
+        loadMoreBtn.querySelector('.btn-text').textContent = "View More";
+        loadMoreBtn.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+        // Smooth scroll back to top of certificates section
+        const certificatesSection = document.getElementById('certificates');
+        if (certificatesSection) {
+          const headerHeight = document.querySelector("header").offsetHeight;
+          const targetPosition = certificatesSection.offsetTop - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
           });
-
-          // Hide button if all certificates are shown
-          const remainingHidden = Array.from(allCards).filter((card) => {
-            return card.style.display === "none";
-          });
-
-          if (remainingHidden.length === 0) {
-            loadMoreBtn.style.display = "none";
-          }
-        } else {
-          loadMoreBtn.style.display = "none";
         }
-      });
-    }
+      }
+    };
+
+    // Set initial state
+    updateCertificatesView();
+    
+    loadMoreBtn.addEventListener("click", () => {
+      isExpanded = !isExpanded;
+      updateCertificatesView();
+    });
   }
 
   // Contact Form Handling - Gmail Integration
@@ -128,6 +125,38 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 2000);
     });
   }
+
+  // Media modal for experience media
+  const mediaModal = document.getElementById("mediaModal");
+  const modalMedia = document.getElementById("modalMedia");
+  const mediaClose = document.getElementById("mediaClose");
+  const mediaOverlay = document.getElementById("mediaModalOverlay");
+
+  function openMedia(src) {
+    if (!mediaModal || !modalMedia) return;
+    modalMedia.src = src;
+    mediaModal.classList.add("open");
+    mediaModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMedia() {
+    if (!mediaModal || !modalMedia) return;
+    mediaModal.classList.remove("open");
+    mediaModal.setAttribute("aria-hidden", "true");
+    modalMedia.src = "";
+  }
+
+  document.querySelectorAll('.btn-view-media').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-media');
+      if (!src) return;
+      openMedia(src);
+    });
+  });
+
+  if (mediaClose) mediaClose.addEventListener('click', closeMedia);
+  if (mediaOverlay) mediaOverlay.addEventListener('click', closeMedia);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMedia(); });
 
   // Fade in animation on scroll
   const observerOptions = {
@@ -171,24 +200,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Toggle Experience Details
-function toggleExperienceDetails(button) {
-  const timelineRole = button.closest(".timeline-role");
-  const moreInfo = timelineRole.querySelector(".role-description-more");
-  const btnText = button.querySelector(".btn-text");
-  const icon = button.querySelector("i");
-
-  if (moreInfo) {
-    const isExpanded = moreInfo.style.display !== "none";
-    
-    if (isExpanded) {
-      moreInfo.style.display = "none";
-      btnText.textContent = "See More";
-      button.classList.remove("active");
-    } else {
-      moreInfo.style.display = "block";
-      btnText.textContent = "See Less";
-      button.classList.add("active");
-    }
-  }
-}
+// 'See More' behavior removed: experience entries show summary only; media is available via 'View Media'.

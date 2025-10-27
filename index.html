@@ -42,7 +42,7 @@
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary">Learn More</a>
                     <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                    <a href="https://drive.google.com/file/d/YOUR_CV_FILE_ID/view" target="_blank" class="btn btn-cv">
+                    <a href="cv/Gede Dira Agastya - CV.pdf" target="_blank" class="btn btn-cv">
                         <i class="fas fa-file-pdf"></i> View CV
                     </a>
                 </div>
@@ -72,10 +72,6 @@
                             <span class="info-value">diraemonnn@gmail.com</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-title">Phone:</span>
-                            <span class="info-value">+62 857 3963 5061</span>
-                        </div>
-                        <div class="info-item">
                             <span class="info-title">Address:</span>
                             <span class="info-value">Bali, Indonesia</span>
                         </div>
@@ -103,9 +99,8 @@
                 <div class="timeline">
                     <!-- Current Experience -->
                     <div class="timeline-entry">
-                        <div class="timeline-company-logo">
+                    <div class="timeline-company-logo">
                             <div class="logo-circle google-logo">
-                                <img src="images/gsa.png" alt="Google">
                             </div>
                         </div>
                         <div class="timeline-content-wrapper">
@@ -129,12 +124,8 @@
                                     <p>As a Google Student Ambassador, I organize tech workshops, facilitate Google events, and mentor students interested in technology careers. I collaborate with the Google team to bring resources and opportunities to our campus community.</p>
                                 </div>
                                 <div class="experience-actions">
-                                    <button class="btn-view-media" onclick="window.open('https://www.google.com/intl/en_us/student-ambassador/', '_blank')">
-                                        <i class="fas fa-external-link-alt"></i> View Details
-                                    </button>
-                                    <button class="btn-see-more" onclick="toggleExperienceDetails(this)">
-                                        <span class="btn-text">See More</span>
-                                        <i class="fas fa-chevron-down"></i>
+                                    <button class="btn-view-media" data-media="images/gsa.png" type="button">
+                                        <i class="fas fa-images"></i> View Media
                                     </button>
                                 </div>
                             </div>
@@ -145,7 +136,6 @@
                     <div class="timeline-entry">
                         <div class="timeline-company-logo">
                             <div class="logo-circle hmj-logo">
-                                <img src="images/prog.png" alt="HMJ TI">
                             </div>
                         </div>
                         <div class="timeline-content-wrapper">
@@ -169,12 +159,8 @@
                                     <p>I actively participated in code reviews, mentored junior members, contributed to open-source projects, and organized programming workshops. I also developed several internal tools and applications that improved the organization's workflow.</p>
                                 </div>
                                 <div class="experience-actions">
-                                    <button class="btn-view-media" onclick="window.open('https://hmjtiundiksha.com/', '_blank')">
-                                        <i class="fas fa-external-link-alt"></i> View Organization
-                                    </button>
-                                    <button class="btn-see-more" onclick="toggleExperienceDetails(this)">
-                                        <span class="btn-text">See More</span>
-                                        <i class="fas fa-chevron-down"></i>
+                                    <button class="btn-view-media" data-media="images/prog.png" type="button">
+                                        <i class="fas fa-images"></i> View Media
                                     </button>
                                 </div>
                             </div>
@@ -184,7 +170,6 @@
                     <div class="timeline-entry">
                         <div class="timeline-company-logo">
                             <div class="logo-circle competition-logo">
-                                <img src="images/cisco.jpeg" alt="Integer">
                             </div>
                         </div>
                         <div class="timeline-content-wrapper">
@@ -203,17 +188,13 @@
                                     <span class="role-separator">•</span>
                                     <span class="role-type">Part-Time</span>
                                 </div>
-                                <p class="role-description">Involved in preparing and executing the TKJ Packet Tracer competition at INTEGER#6 by the Informatics Engineering Student Association. Assisted with problem set creation, network simulation setup, participant support, and result evaluation.</p>
-                                <div class="role-description-more" style="display: none;">
-                                    <p>I designed challenging network scenarios, created troubleshooting exercises, managed participant communications, coordinated with judges, and developed the competition portal. The event had 50+ participants and received positive feedback from both participants and faculty.</p>
-                                </div>
+                            <button class="btn btn-load-more" id="loadMoreCertificates" style="display: none;">
+                                <span class="btn-text">View More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
                                 <div class="experience-actions">
-                                    <button class="btn-view-media" onclick="window.open('https://integer.hmjtiundiksha.com/', '_blank')">
-                                        <i class="fas fa-images"></i> View Event Media
-                                    </button>
-                                    <button class="btn-see-more" onclick="toggleExperienceDetails(this)">
-                                        <span class="btn-text">See More</span>
-                                        <i class="fas fa-chevron-down"></i>
+                                    <button class="btn-view-media" data-media="images/cisco.jpeg" type="button">
+                                        <i class="fas fa-images"></i> View Media
                                     </button>
                                 </div>
                             </div>
@@ -319,8 +300,8 @@
                 </div>
             </div>
             <div class="certificates-control">
-                <button class="btn btn-load-more" id="loadMoreCertificates" style="display: none;">
-                    <span class="btn-text">View More Certificates</span>
+                <button class="btn btn-load-more" id="loadMoreCertificates">
+                    <span class="btn-text">View More</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
             </div>
@@ -331,8 +312,7 @@
     <section id="skills" class="skills" data-theme="light">
         <div class="container">
             <h2 class="section-title">Skills</h2>
-            
-            <div class="skills-category-container">
+            <div class="skills-grid">
                 <div class="skills-category">
                     <div class="skills-list-container">
                         <ul class="skills-list">
@@ -476,10 +456,6 @@
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <span>diraemonnn@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+62 857 3963 5061</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
