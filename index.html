@@ -16,11 +16,12 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Bio</a></li>
-                    <li><a href="#experience">Org & Exp</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Project</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact" class="nav-contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <div class="bar"></div>
@@ -35,9 +36,16 @@
     <section id="home" class="hero" data-theme="dark">
         <div class="container">
             <div class="hero-content">
-                <h1>Hello there! I'm Dira</h1>
-                <p>Information System Uni Student & Google Student Ambassador</p>
-                <a href="#about" class="btn">Get to Know Me</a>
+                <h1>Gede Dira Agastya</h1>
+                <p class="hero-subtitle">Information Systems Student & Google Student Ambassador</p>
+                <p class="hero-description">Building innovative digital solutions with passion and purpose</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    <a href="https://drive.google.com/file/d/YOUR_CV_FILE_ID/view" target="_blank" class="btn btn-cv">
+                        <i class="fas fa-file-pdf"></i> View CV
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -45,7 +53,7 @@
     <!-- About/Biodata Section -->
     <section id="about" class="about" data-theme="light">
         <div class="container">
-            <h2 class="section-title">Bio</h2>
+            <h2 class="section-title">About</h2>
             <div class="about-content">
                 <div class="about-img">
                     <img src="images/profile.jpg" alt="Profile Picture">
@@ -90,42 +98,126 @@
     <!-- Experience Section -->
     <section id="experience" class="experience" data-theme="light">
         <div class="container">
-            <h2 class="section-title">Org & Exp</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="images/gsa.png" alt="SUKSESI 2025 HMJ TI Undiksha">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <!-- Current Experience -->
+                    <div class="timeline-entry">
+                        <div class="timeline-company-logo">
+                            <div class="logo-circle google-logo">
+                                <img src="images/gsa.png" alt="Google">
+                            </div>
                         </div>
-                        <h3>Google Student Ambassador</h3>
-                        <h4>Google Indonesia</h4>
-                        <p class="timeline-date">September 2025</p>
-                        <p>I am a Google Student Ambassador from Ganesha University of Education with an academic background in Informatics Engineering. I have a deep interest in software engineering, web development, and network administration. Through this role, I am committed to building a strong tech community on campus, organizing workshops, and connecting students with the various opportunities Google offers for career and skill development.</p>
+                        <div class="timeline-content-wrapper">
+                            <div class="timeline-company">
+                                <div class="company-name">Google Indonesia</div>
+                            </div>
+                            <div class="timeline-role">
+                                <div class="role-header">
+                                    <h3>Google Student Ambassador</h3>
+                                    <i class="fas fa-check-circle verified-icon"></i>
+                                </div>
+                                <div class="role-details">
+                                    <span class="role-duration">September 2025 - Present</span>
+                                    <span class="role-separator">•</span>
+                                    <span class="role-location">Bali, Indonesia</span>
+                                    <span class="role-separator">•</span>
+                                    <span class="role-type">Part-Time</span>
+                                </div>
+                                <p class="role-description">I am a Google Student Ambassador from Ganesha University of Education with an academic background in Informatics Engineering. I have a deep interest in software engineering, web development, and network administration. Through this role, I am committed to building a strong tech community on campus, organizing workshops, and connecting students with the various opportunities Google offers for career and skill development.</p>
+                                <div class="role-description-more" style="display: none;">
+                                    <p>As a Google Student Ambassador, I organize tech workshops, facilitate Google events, and mentor students interested in technology careers. I collaborate with the Google team to bring resources and opportunities to our campus community.</p>
+                                </div>
+                                <div class="experience-actions">
+                                    <button class="btn-view-media" onclick="window.open('https://www.google.com/intl/en_us/student-ambassador/', '_blank')">
+                                        <i class="fas fa-external-link-alt"></i> View Details
+                                    </button>
+                                    <button class="btn-see-more" onclick="toggleExperienceDetails(this)">
+                                        <span class="btn-text">See More</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="images/prog.png" alt="RGC XV UKM Musik Undiksha">
+
+                    <!-- Past Experiences -->
+                    <div class="timeline-entry">
+                        <div class="timeline-company-logo">
+                            <div class="logo-circle hmj-logo">
+                                <img src="images/prog.png" alt="HMJ TI">
+                            </div>
                         </div>
-                        <h3>Programming Sub-Division Member</h3>
-                        <h4>HMJ TI Undiksha</h4>
-                        <p class="timeline-date">April 2025</p>
-                        <p>I joined the Programming Sub-Division out of a love for coding and problem-solving. I am enthusiastic about contributing to technical projects at HMJ TI, learning new things from my peers, and collectively creating impactful digital work.</p>
+                        <div class="timeline-content-wrapper">
+                            <div class="timeline-company">
+                                <div class="company-name">HMJ TI Undiksha</div>
+                            </div>
+                            <div class="timeline-role">
+                                <div class="role-header">
+                                    <h3>Programming Sub-Division Member</h3>
+                                    <i class="fas fa-check-circle verified-icon"></i>
+                                </div>
+                                <div class="role-details">
+                                    <span class="role-duration">April 2025 - September 2025 (5 months)</span>
+                                    <span class="role-separator">•</span>
+                                    <span class="role-location">Singaraja, Bali, Indonesia</span>
+                                    <span class="role-separator">•</span>
+                                    <span class="role-type">Part-Time</span>
+                                </div>
+                                <p class="role-description">I joined the Programming Sub-Division out of a love for coding and problem-solving. I am enthusiastic about contributing to technical projects at HMJ TI, learning new things from my peers, and collectively creating impactful digital work.</p>
+                                <div class="role-description-more" style="display: none;">
+                                    <p>I actively participated in code reviews, mentored junior members, contributed to open-source projects, and organized programming workshops. I also developed several internal tools and applications that improved the organization's workflow.</p>
+                                </div>
+                                <div class="experience-actions">
+                                    <button class="btn-view-media" onclick="window.open('https://hmjtiundiksha.com/', '_blank')">
+                                        <i class="fas fa-external-link-alt"></i> View Organization
+                                    </button>
+                                    <button class="btn-see-more" onclick="toggleExperienceDetails(this)">
+                                        <span class="btn-text">See More</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="images/cisco.jpeg" alt="INTEGER#6 HMJ TI Undiksha">
+
+                    <div class="timeline-entry">
+                        <div class="timeline-company-logo">
+                            <div class="logo-circle competition-logo">
+                                <img src="images/cisco.jpeg" alt="Integer">
+                            </div>
                         </div>
-                        <h3>Competition Committee Member</h3>
-                        <h4>INTEGER#6 HMJ TI Undiksha</h4>
-                        <p class="timeline-date">October 2024</p>
-                        <p>Involved in preparing and executing the TKJ Packet Tracer competition at INTEGER#6 by the Informatics Engineering Student Association. Assisted with problem set creation, network simulation setup, participant support, and result evaluation.</p>
+                        <div class="timeline-content-wrapper">
+                            <div class="timeline-company">
+                                <div class="company-name">INTEGER#6 HMJ TI</div>
+                            </div>
+                            <div class="timeline-role">
+                                <div class="role-header">
+                                    <h3>Competition Committee Member</h3>
+                                    <i class="fas fa-check-circle verified-icon"></i>
+                                </div>
+                                <div class="role-details">
+                                    <span class="role-duration">October 2024 - December 2024 (2 months)</span>
+                                    <span class="role-separator">•</span>
+                                    <span class="role-location">Singaraja, Bali, Indonesia</span>
+                                    <span class="role-separator">•</span>
+                                    <span class="role-type">Part-Time</span>
+                                </div>
+                                <p class="role-description">Involved in preparing and executing the TKJ Packet Tracer competition at INTEGER#6 by the Informatics Engineering Student Association. Assisted with problem set creation, network simulation setup, participant support, and result evaluation.</p>
+                                <div class="role-description-more" style="display: none;">
+                                    <p>I designed challenging network scenarios, created troubleshooting exercises, managed participant communications, coordinated with judges, and developed the competition portal. The event had 50+ participants and received positive feedback from both participants and faculty.</p>
+                                </div>
+                                <div class="experience-actions">
+                                    <button class="btn-view-media" onclick="window.open('https://integer.hmjtiundiksha.com/', '_blank')">
+                                        <i class="fas fa-images"></i> View Event Media
+                                    </button>
+                                    <button class="btn-see-more" onclick="toggleExperienceDetails(this)">
+                                        <span class="btn-text">See More</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,7 +229,7 @@
     <section id="certificates" class="certificates" data-theme="light">
         <div class="container">
             <h2 class="section-title">Certificates</h2>
-            <div class="certificates-grid">
+            <div class="certificates-grid" id="certificatesGrid">
                 <div class="certificate-card">
                     <div class="certificate-img">
                         <a href="https://www.dicoding.com/certificates/2VX3O3844ZYQ" class="certificate-link" target="_blank" rel="noopener" title="View credential">
@@ -226,6 +318,12 @@
                     <p class="certificate-date">2025</p>
                 </div>
             </div>
+            <div class="certificates-control">
+                <button class="btn btn-load-more" id="loadMoreCertificates" style="display: none;">
+                    <span class="btn-text">View More Certificates</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -239,63 +337,63 @@
                     <div class="skills-list-container">
                         <ul class="skills-list">
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon html-icon">
                                     <i class="fab fa-html5"></i>
                                 </div>
                                 <span>HTML</span>
                                 <p class="skill-description">Currently learning and improving HTML skills.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon css-icon">
                                     <i class="fab fa-css3-alt"></i>
                                 </div>
                                 <span>CSS</span>
                                 <p class="skill-description">Currently learning and improving CSS skills.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon js-icon">
                                     <i class="fab fa-js"></i>
                                 </div>
                                 <span>Basic JavaScript</span>
                                 <p class="skill-description">Currently learning the fundamentals of JavaScript.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon python-icon">
                                     <i class="fab fa-python"></i>
                                 </div>
                                 <span>Python</span>
                                 <p class="skill-description">Currently learning and improving Python skills.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon network-icon">
                                     <i class="fas fa-diagram-project"></i>
                                 </div>
                                 <span>Network Architect</span>
                                 <p class="skill-description">Designing scalable, secure network topologies and infrastructure blueprints.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon network-icon">
                                     <i class="fas fa-network-wired"></i>
                                 </div>
                                 <span>Network Engineering</span>
                                 <p class="skill-description">Configuring routing, switching, security, and monitoring for reliable networks.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon gcp-icon">
                                     <i class="fab fa-google"></i>
                                 </div>
                                 <span>Google Cloud</span>
                                 <p class="skill-description">Working with Google Cloud Platform services and infrastructure.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon database-icon">
                                     <i class="fas fa-database"></i>
                                 </div>
                                 <span>Data Classification</span>
                                 <p class="skill-description">Organizing and categorizing data for effective analysis and processing.</p>
                             </li>
                             <li class="skill-list-item">
-                                <div class="skill-icon">
+                                <div class="skill-icon data-icon">
                                     <i class="fas fa-chart-pie"></i>
                                 </div>
                                 <span>Data Summarization</span>
@@ -311,7 +409,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio" data-theme="light">
         <div class="container">
-            <h2 class="section-title">Project</h2>
+            <h2 class="section-title">Projects</h2>
             
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="logo">
@@ -366,31 +464,61 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Contact Section -->
+    <section id="contact" class="contact" data-theme="light">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Closing Note</h3>
-                    <p>Thank you for visiting. I’m excited to keep growing and contributing through technology.</p>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-envelope"></i> diraemonnn@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +62 857 3963 5061</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</p>
-                </div>
-                <div class="footer-social">
-                    <h3>Connect with Me</h3>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Feel free to reach out for collaboration, opportunities, or just to say hello.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>diraemonnn@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 857 3963 5061</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bali, Indonesia</span>
+                        </div>
+                    </div>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/gede-dira-agastya-68288527b" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.instagram.com/diraemonnn/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/Diraemonnn" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/Diraemonnn" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-form">
+                        <i class="fab fa-google"></i> Send via Gmail
+                    </button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Diraemonnn. Keep shipping. Keep learning.</p>
+                <p>&copy; 2025 Gede Dira Agastya. All rights reserved.</p>
             </div>
         </div>
     </footer>
